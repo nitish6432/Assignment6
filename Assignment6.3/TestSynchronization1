@@ -1,0 +1,17 @@
+package myPack;
+
+class TestSynchronization1{  
+    public static void main(String args[]){  
+
+    BankApplication obj = new BankApplication();//creating Table class object 
+    
+    System.out.println("Welcome to BANK : " + obj.BankName());// prints bank name as specified
+    System.out.println("Branch location : " + obj.Location());//prints branch location name as specified
+   
+    MyThread1 t1=new MyThread1(obj);  // creating Thread1  object 
+   
+    MyThread2 t2=new MyThread2(obj);  // creating Thread2  object 
+    t1.start();//makes Thread1 to execute
+    t2.start();//makes Thread2 to execute
+    }  
+    }

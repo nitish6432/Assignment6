@@ -1,0 +1,32 @@
+package myPack;
+
+
+	
+	class Prime implements Runnable// checks whether a given number is a prime by implementing Runnable interface
+	{
+	Thread t2;// creation of thread 2
+	Prime()
+	{
+	
+		t2=new Thread(this,"Prime number");
+	   
+	    t2.start();//causes to begin execution
+	}
+		
+	    public void run()
+	    {
+	        int no;
+	        for(no=11;no<=20;no++)// logic to check which integers between the range 10 and 20 are prime
+	        {
+	            int count=0;// intialising count
+	            for(int i=2;i<=no/2;i++)// logic
+	                if(no%i==0)
+	                {
+	                    count++;
+	                    break;
+	                }
+	            if(count==0)
+	                System.out.println(no+" Number is prime");// prints message when number is prime in the givebn range
+	        }
+	    }
+	}

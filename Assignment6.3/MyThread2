@@ -1,0 +1,18 @@
+package myPack;
+
+class MyThread2 extends Thread{  // Creating Thread2
+    BankApplication t;  
+    MyThread2(BankApplication t){  
+    this.t=t;  
+    }  
+    public void run(){  
+    	 
+    	try {
+			t.withdraw(5);  //withdrawing  5 using Thread2
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        t.deposit(20); //deposit  20 using Thread2
+    }  
+    }  

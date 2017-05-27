@@ -1,0 +1,30 @@
+package myPack;
+
+public class Thread2 {
+	
+	
+	    public static void main(String args[])// main method
+	    {
+	       
+	    new NewThread1();// Creates NewThread1 object
+	                System.out.println("Output using Thread class");
+	                
+	                new Prime(); //// Creates Prime object
+	                
+	                System.out.println("Output using Runnable interface");
+	                
+	                
+	       }
+	}
+
+
+
+
+
+Output using Thread class
+number is not prime
+Output using Runnable interface
+11 Number is prime
+13 Number is prime
+17 Number is prime
+19 Number is prime

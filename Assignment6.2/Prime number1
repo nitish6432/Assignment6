@@ -1,0 +1,42 @@
+package myPack;
+
+public class NewThread1 extends Thread {// checks whether a given number is a prime by extending thread class
+	
+	
+			Thread t1;
+		NewThread1()
+		{
+			//creation of thread t1
+		    t1=new Thread(this,"Prime number");//referring to refer current class instance variable.
+		     
+		    t1.start();//causes to begin execution
+		    
+		}
+			
+		public void run()
+		{
+			int i, m=0 ,flag=0; // initialising variables
+			      
+			 	
+			 int n=6;//it is the number to be checked
+			
+			    m=n/2;
+			    for(i=2; i<=m; i++){   //logic
+			    	if (n%i==0)
+			    	{
+			    	
+			     System.out.println("number is not prime");
+			     
+			     flag=1;
+			     
+			     break;
+			    	}}
+			           
+			    
+			if (flag==0)    
+				
+				System.out.println("number is prime");
+			
+			           }}
+			
+			

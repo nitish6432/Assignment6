@@ -1,0 +1,54 @@
+package myPack;
+    public class BankApplication{  
+    	
+    	public int balance = 1000;//  initial balance present in account 
+	    public String BankName ="HDFC";
+	    String Location = "Bangalore";
+	    
+public String BankName(){
+	    	
+	    	return BankName;// returns BankName as enetered
+	    }
+	    
+        public String Location(){
+	    	
+	    	return Location;// returns Location as enetered
+	    }
+        
+	    
+	    
+	    
+	  
+	 //function to withdraw using  synchronized
+	    public  synchronized void withdraw(int amount) {// withdraw method 
+	       
+	
+	       balance = balance - amount;// amount added with balance and printed
+	      
+	      //handling exception
+	       try{Thread.sleep(500);
+	       }
+	       catch(Exception e){System.out.println(e);}  
+	        
+	       System.out.println("Your current balance after withdrawl session is : " +balance);// shows withdraw functionality
+	    }
+	    
+	    
+	    //function to deposit using  synchronized
+	    public  synchronized  void deposit(int dep) {// deposit method
+	       
+	        	
+	        	balance= balance+ dep;// dep added with balance and printed
+	        	
+			//handling exception
+	        	 try{Thread.sleep(500);
+	  	       }
+	  	       catch(Exception e){System.out.println(e);}  
+	        	 System.out.println("Your current balance after deposit is session : " +balance); // shows deposit functionality
+	  	        }
+	    
+	    }
+	 
+	
+
+      

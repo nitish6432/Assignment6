@@ -1,0 +1,36 @@
+package Practice2;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;//}importing executors and Scheduled executors
+import java.util.concurrent.TimeUnit;// importing Time unit for setting time
+
+
+public class TimerThread {
+	
+	
+	
+
+	    private static class Timer implements Runnable  // Timer class implementing Runnable interface
+	    {
+	        @Override
+	        public void run() //inheriting the abstract method run() from Runnable interface
+	        {
+	            System.out.println("3 seconds passed");
+	        }
+	    }
+
+	    public static void main(String[] args) throws InterruptedException//creating main method, InterruptedException is thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity
+	    {
+	    	// creating object
+	        Runnable r = new Timer(); 
+	        //Using a timer or ScheduledExecutorService
+	        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);//Creates a thread pool that can schedule commands to run after a given delay, or to execute periodically.
+	        service.scheduleAtFixedRate(r, 0, 3, TimeUnit.SECONDS);// Setting rate after which "3 seconds passed message should be displayed".
+
+	        Thread.sleep(20000);// Thread will print the given message in 3 seconds interval till 20 seconds 
+	        service.shutdown();//To terminate the threads inside the ExecutorService shutdown() is being called
+
+	    }
+	}
+
+
